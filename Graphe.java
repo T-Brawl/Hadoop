@@ -40,12 +40,13 @@ public class Graphe {
       amis.set(liste);
       
       for(int i = 1; i <= 100 ; i++) {
-        if(Integer.parseInt(tokens[0]) <= i) {
+        if(Integer.parseInt(tokens[0]) < i) {
           couple.set(tokens[0]+" "+i);
-        } else {
+          context.write(couple,amis);
+        } else if (Integer.parseInt(tokens[0]) > i){
           couple.set(i+" "+tokens[0]);
+          context.write(couple,amis);
         }
-        context.write(couple,amis);
       }  
 
     }
