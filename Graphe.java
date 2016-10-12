@@ -39,11 +39,11 @@ public class Graphe {
       
       amis.set(liste);
       
-      for(int i = 1; i < tokens.length ; i++) {
-        if(Integer.parseInt(tokens[0]) <= Integer.parseInt(tokens[i])) {
-          couple.set(tokens[0]+" "+tokens[i]);
+      for(int i = 1; i <= 100 ; i++) {
+        if(Integer.parseInt(tokens[0]) <= i) {
+          couple.set(tokens[0]+" "+i);
         } else {
-          couple.set(tokens[i]+" "+tokens[0]);
+          couple.set(i+" "+tokens[0]);
         }
         context.write(couple,amis);
       }  
